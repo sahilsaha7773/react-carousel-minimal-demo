@@ -11,7 +11,7 @@ function App() {
   const data = [
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
-      caption: "San Francisco"
+      caption: "San Francisco<br/>This is a new line"
     },
     {
       image: "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
@@ -60,6 +60,7 @@ function App() {
   const [slideImageFit, setSlideImageFit] = useState("cover");
   const [thumbnails, setThumbnails] = useState(true);
   const [thumbnailWidth, setThumbnailWidth] = useState("100px");
+  const [showNavBtn, setShowNavBtn] = useState(true);
 
   const captionStyle = {
     fontSize: '2em',
@@ -113,6 +114,7 @@ function App() {
             slideImageFit={slideImageFit}
             thumbnails={thumbnails}
             thumbnailWidth={thumbnailWidth}
+            showNavBtn={showNavBtn}
             style={{
               textAlign: "center",
               maxWidth: "850px",
@@ -164,7 +166,13 @@ function App() {
                 <input type="checkbox" checked={dots} onChange={e => setDots(e.target.checked)} />
               </div>
             </div>
+            <div className="form-element">
 
+              <div className="inp-box">
+                <label>Show Nav Btn: </label>
+                <input type="checkbox" checked={showNavBtn} onChange={e => setShowNavBtn(e.target.checked)} />
+              </div>
+            </div>
           </form>
         </div>
       </div>
